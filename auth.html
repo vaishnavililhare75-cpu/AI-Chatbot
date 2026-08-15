@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Aura AI - Authentication</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;family=Playfair+Display:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+  tailwind.config = {
+    darkMode: "class",
+    theme: {
+      extend: {
+        "colors": {
+                "primary-container": "#cd778f",
+                "error": "#ffb4ab",
+                "background": "#141218",
+                "surface": "#141218",
+                "on-error": "#690005",
+                "rose-gold-glow": "rgba(192, 108, 132, 0.15)",
+                "secondary": "#f4b7b7",
+                "surface-container-low": "#1d1b21",
+                "on-secondary-fixed": "#321112",
+                "outline-variant": "#534346",
+                "on-secondary-container": "#e1a6a6",
+                "on-secondary": "#4c2526",
+                "on-background": "#e6e0e9",
+                "on-tertiary-fixed": "#1d1a22",
+                "on-primary-fixed": "#3d031b",
+                "secondary-container": "#663b3c",
+                "surface-variant": "#36343a",
+                "secondary-fixed-dim": "#f4b7b7",
+                "deep-charcoal": "#1A181E",
+                "soft-gray": "#A19DA8",
+                "on-tertiary-fixed-variant": "#49454e",
+                "primary-fixed-dim": "#ffb1c5",
+                "primary-fixed": "#ffd9e1",
+                "tertiary-fixed": "#e7e0eb",
+                "surface-container-highest": "#36343a",
+                "on-primary-container": "#501129",
+                "surface-bright": "#3b383f",
+                "surface-container-lowest": "#0f0d13",
+                "primary": "#ffb1c5",
+                "error-container": "#93000a",
+                "off-white": "#FDFBFB",
+                "outline": "#a08c90",
+                "on-tertiary": "#322f37",
+                "on-surface-variant": "#d8c1c5",
+                "tertiary-container": "#948f99",
+                "inverse-surface": "#e6e0e9",
+                "secondary-fixed": "#ffdad9",
+                "on-primary-fixed-variant": "#752f46",
+                "on-surface": "#e6e0e9",
+                "midnight-pearl": "#2B2830",
+                "surface-dim": "#141218",
+                "surface-container-high": "#2b292f",
+                "inverse-on-surface": "#322f36",
+                "on-tertiary-container": "#2b2830",
+                "on-error-container": "#ffdad6",
+                "tertiary-fixed-dim": "#cac4cf",
+                "on-primary": "#59192f",
+                "surface-tint": "#ffb1c5",
+                "tertiary": "#cac4cf",
+                "on-secondary-fixed-variant": "#663b3c",
+                "surface-container": "#211f25",
+                "inverse-primary": "#92465d"
+        },
+        "borderRadius": {
+                "DEFAULT": "0.25rem",
+                "lg": "0.5rem",
+                "xl": "0.75rem",
+                "full": "9999px"
+        },
+        "spacing": {
+                "stack-sm": "12px",
+                "max-width": "1280px",
+                "stack-lg": "48px",
+                "stack-md": "24px",
+                "base": "8px",
+                "container-padding-mobile": "20px",
+                "container-padding-desktop": "64px",
+                "gutter": "24px"
+        },
+        "fontFamily": {
+                "headline-lg": [
+                        "Playfair Display"
+                ],
+                "body-md": [
+                        "Plus Jakarta Sans"
+                ],
+                "label-sm": [
+                        "Plus Jakarta Sans"
+                ],
+                "label-md": [
+                        "Plus Jakarta Sans"
+                ],
+                "headline-lg-mobile": [
+                        "Playfair Display"
+                ],
+                "headline-md": [
+                        "Playfair Display"
+                ],
+                "body-lg": [
+                        "Plus Jakarta Sans"
+                ],
+                "display-lg": [
+                        "Playfair Display"
+                ]
+        },
+        "fontSize": {
+                "headline-lg": [
+                        "40px",
+                        {
+                                "lineHeight": "48px",
+                                "fontWeight": "600"
+                        }
+                ],
+                "body-md": [
+                        "16px",
+                        {
+                                "lineHeight": "24px",
+                                "fontWeight": "400"
+                        }
+                ],
+                "label-sm": [
+                        "12px",
+                        {
+                                "lineHeight": "16px",
+                                "fontWeight": "500"
+                        }
+                ],
+                "label-md": [
+                        "14px",
+                        {
+                                "lineHeight": "20px",
+                                "letterSpacing": "0.05em",
+                                "fontWeight": "600"
+                        }
+                ],
+                "headline-lg-mobile": [
+                        "32px",
+                        {
+                                "lineHeight": "40px",
+                                "fontWeight": "600"
+                        }
+                ],
+                "headline-md": [
+                        "28px",
+                        {
+                                "lineHeight": "36px",
+                                "fontWeight": "500"
+                        }
+                ],
+                "body-lg": [
+                        "18px",
+                        {
+                                "lineHeight": "28px",
+                                "fontWeight": "400"
+                        }
+                ],
+                "display-lg": [
+                        "56px",
+                        {
+                                "lineHeight": "64px",
+                                "letterSpacing": "-0.02em",
+                                "fontWeight": "700"
+                        }
+                ]
+        }
+},
+    },
+  }
+</script>
+<style>
+        .glass-panel {
+            background: rgba(20, 18, 24, 0.6);
+            backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .glass-input {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.3s ease;
+        }
+        .glass-input:focus {
+            border-color: #ffb1c5; /* primary */
+            box-shadow: 0 0 15px rgba(255, 177, 197, 0.1);
+            background: rgba(255, 255, 255, 0.1);
+            outline: none;
+        }
+        .ambient-shadow {
+            box-shadow: 0 12px 40px 0 rgba(0, 0, 0, 0.6);
+        }
+        .bg-base-gradient {
+            background: radial-gradient(circle at top left, #2B2830 0%, #141218 40%),
+                        radial-gradient(circle at bottom right, #36343a 0%, #141218 50%);
+            background-color: #141218;
+        }
+    </style>
+</head>
+<body class="bg-base-gradient text-on-surface min-h-screen flex items-center justify-center p-container-padding-mobile md:p-container-padding-desktop">
+<!-- SUPPRESSING NAVIGATION SHELL: Transactional Login Intent -->
+<main class="w-full max-w-[1024px] mx-auto">
+<!-- Dual Panel Card -->
+<div class="glass-panel ambient-shadow rounded-[28px] overflow-hidden flex flex-col md:flex-row relative z-10">
+<!-- Left Brand Panel -->
+<div class="w-full md:w-5/12 p-stack-lg flex flex-col justify-between relative overflow-hidden bg-midnight-pearl/80">
+<div class="absolute inset-0 opacity-10 pointer-events-none" data-alt="Abstract ethereal fluid gradient waves in soft pearl, rose-gold, and lavender tones. Ethereal, calming, light-refracting glassmorphism style. Subtle luminous depth, premium AI workspace aesthetic." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAASlHIDtZ45C9Mipa16NgAUqhcv4B1ovP7uYxoDJrXkYIv-w59xZ7N-9iMDq-zvhEW6qL9A5UIHJ1DtBajZGPb32CPrudSQLl8XRqE2b98rWZ9Gqvv2WclVfWoRTNLY61xa2AwIf6RLPxI7XWFxP-fVq7ynJFOZvprk3DZrV_BALNYQvnhUnFWnTQ5fvM7xm72jJvSCkUaJLJbFdUUxe7lnbL2a52SBrQ75g-H-e98k9PVqn6SEh-t'); mix-blend-mode: overlay;"></div>
+<div class="relative z-10">
+<h1 class="font-headline-md text-headline-md md:font-display-lg md:text-display-lg font-bold bg-gradient-to-r from-[#C06C84] to-[#D49B9B] bg-clip-text text-transparent mb-stack-md">
+                        Aura AI
+                    </h1>
+</div>
+<div class="relative z-10 mt-stack-lg md:mt-0">
+<h2 class="font-headline-lg-mobile text-headline-lg-mobile md:font-headline-lg md:text-headline-lg mb-stack-sm text-off-white">
+                        Welcome to your calm workspace
+                    </h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant flex items-center gap-2">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">lock</span>
+                        Protected by Passkey &amp; Biometric Encrypted Auth
+                    </p>
+</div>
+</div>
+<!-- Right Form Container -->
+<div class="w-full md:w-7/12 p-stack-lg bg-surface-container/60 backdrop-blur-2xl">
+<!-- Pill Tab Selector -->
+<div class="flex p-1 bg-surface-container-high rounded-full mb-stack-lg border border-outline-variant/30">
+<button class="flex-1 py-2 font-label-md text-label-md rounded-full bg-surface-bright text-primary ambient-shadow transition-all duration-300">Sign In</button>
+<button class="flex-1 py-2 font-label-md text-label-md rounded-full text-on-surface-variant hover:bg-white/10 transition-all duration-300">Register</button>
+</div>
+<form class="space-y-stack-md">
+<div>
+<label class="block font-label-sm text-label-sm text-on-surface-variant mb-base" for="email">Email Address</label>
+<input class="glass-input w-full rounded-lg px-4 py-3 font-body-md text-body-md text-on-surface placeholder-on-surface-variant/50" id="email" placeholder="name@company.com" type="email"/>
+</div>
+<div>
+<label class="block font-label-sm text-label-sm text-on-surface-variant mb-base" for="password">Password</label>
+<input class="glass-input w-full rounded-lg px-4 py-3 font-body-md text-body-md text-on-surface placeholder-on-surface-variant/50" id="password" placeholder="••••••••" type="password"/>
+</div>
+<div class="flex items-center justify-between">
+<label class="flex items-center gap-2 cursor-pointer group">
+<input class="rounded border-outline-variant bg-surface-container-high text-primary focus:ring-primary group-hover:bg-white/10 transition-colors" type="checkbox"/>
+<span class="font-body-md text-body-md text-on-surface-variant">Remember me</span>
+</label>
+<a class="font-label-md text-label-md text-[#C06C84] hover:text-primary transition-colors" href="#">Forgot password?</a>
+</div>
+<button class="w-full py-4 rounded-full font-label-md text-label-md text-white bg-gradient-to-r from-[#C06C84] to-[#D49B9B] hover:opacity-90 transition-opacity ambient-shadow mt-stack-sm" type="button">
+                        Sign In to Workspace
+                    </button>
+</form>
+<!-- Social Auth -->
+<div class="mt-stack-lg">
+<div class="flex items-center gap-4 mb-stack-md">
+<div class="flex-1 h-px bg-outline-variant/30"></div>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Or continue with</span>
+<div class="flex-1 h-px bg-outline-variant/30"></div>
+</div>
+<div class="flex justify-center gap-4">
+<button class="p-3 glass-panel rounded-full hover:bg-white/10 transition-all duration-300 flex items-center justify-center ambient-shadow group">
+<span class="material-symbols-outlined text-on-surface-variant group-hover:text-primary transition-colors">login</span>
+</button>
+<button class="p-3 glass-panel rounded-full hover:bg-white/10 transition-all duration-300 flex items-center justify-center ambient-shadow group">
+<span class="material-symbols-outlined text-on-surface-variant group-hover:text-primary transition-colors">file_download</span>
+</button>
+<button class="p-3 glass-panel rounded-full hover:bg-white/10 transition-all duration-300 flex items-center justify-center ambient-shadow group">
+<span class="material-symbols-outlined text-on-surface-variant group-hover:text-primary transition-colors">fingerprint</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</main>
+</body></html>

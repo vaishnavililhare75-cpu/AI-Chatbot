@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Aura AI - Onboarding</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Plus+Jakarta+Sans:wght@400..700&display=swap"
+        rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@100..900&family=Plus+Jakarta+Sans:wght@100..900&display=swap"
+        rel="stylesheet" />
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-bright": "#3b383f",
+                        "surface-container-lowest": "#0f0d13",
+                        "on-tertiary-container": "#2b2830",
+                        "error": "#ffb4ab",
+                        "primary-fixed": "#ffd9e1",
+                        "background": "#141218",
+                        "on-secondary": "#4c2526",
+                        "on-background": "#e6e0e9",
+                        "on-tertiary-fixed": "#1d1a22",
+                        "primary-container": "#cd778f",
+                        "on-surface": "#e6e0e9",
+                        "on-secondary-fixed-variant": "#663b3c",
+                        "surface-container": "#211f25",
+                        "on-primary-fixed": "#3d031b",
+                        "surface-variant": "#36343a",
+                        "secondary-fixed-dim": "#f4b7b7",
+                        "tertiary-container": "#948f99",
+                        "surface": "#141218",
+                        "on-primary": "#59192f",
+                        "inverse-primary": "#92465d",
+                        "inverse-on-surface": "#322f36",
+                        "tertiary": "#cac4cf",
+                        "on-error-container": "#ffdad6",
+                        "tertiary-fixed-dim": "#cac4cf",
+                        "surface-tint": "#ffb1c5",
+                        "rose-gold-glow": "rgba(192, 108, 132, 0.15)",
+                        "surface-container-high": "#2b292f",
+                        "on-secondary-fixed": "#321112",
+                        "outline-variant": "#534346",
+                        "on-surface-variant": "#d8c1c5",
+                        "soft-gray": "#A19DA8",
+                        "on-primary-fixed-variant": "#752f46",
+                        "error-container": "#93000a",
+                        "secondary-container": "#663b3c",
+                        "off-white": "#FDFBFB",
+                        "primary-fixed-dim": "#ffb1c5",
+                        "on-error": "#690005",
+                        "tertiary-fixed": "#e7e0eb",
+                        "surface-container-low": "#1d1b21",
+                        "on-secondary-container": "#e1a6a6",
+                        "midnight-pearl": "#2B2830",
+                        "secondary": "#f4b7b7",
+                        "on-primary-container": "#501129",
+                        "outline": "#a08c90",
+                        "surface-container-highest": "#36343a",
+                        "surface-dim": "#141218",
+                        "primary": "#ffb1c5",
+                        "inverse-surface": "#e6e0e9",
+                        "secondary-fixed": "#ffdad9",
+                        "on-tertiary": "#322f37",
+                        "deep-charcoal": "#1A181E",
+                        "on-tertiary-fixed-variant": "#49454e"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "max-width": "1280px",
+                        "stack-lg": "48px",
+                        "gutter": "24px",
+                        "margin-mobile": "20px",
+                        "stack-sm": "12px",
+                        "base": "8px",
+                        "margin-desktop": "64px",
+                        "stack-md": "24px"
+                    },
+                    "fontFamily": {
+                        "headline-lg": ["Playfair Display"],
+                        "display-lg": ["Playfair Display"],
+                        "headline-lg-mobile": ["Playfair Display"],
+                        "label-md": ["Plus Jakarta Sans"],
+                        "body-md": ["Plus Jakarta Sans"],
+                        "body-lg": ["Plus Jakarta Sans"],
+                        "label-sm": ["Plus Jakarta Sans"],
+                        "headline-md": ["Playfair Display"]
+                    },
+                    "fontSize": {
+                        "headline-lg": ["40px", { "lineHeight": "48px", "fontWeight": "600" }],
+                        "display-lg": ["56px", { "lineHeight": "64px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "headline-lg-mobile": ["32px", { "lineHeight": "40px", "fontWeight": "600" }],
+                        "label-md": ["14px", { "lineHeight": "20px", "letterSpacing": "0.05em", "fontWeight": "600" }],
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+                        "label-sm": ["12px", { "lineHeight": "16px", "fontWeight": "500" }],
+                        "headline-md": ["28px", { "lineHeight": "36px", "fontWeight": "500" }]
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .glass-panel {
+            background-color: rgba(43, 40, 48, 0.4);
+            backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+        }
+
+        .bg-glow-radial {
+            background: radial-gradient(circle at 50% 50%, rgba(192, 108, 132, 0.15) 0%, rgba(26, 24, 30, 0) 70%);
+        }
+    </style>
+</head>
+
+<body
+    class="bg-deep-charcoal text-on-surface antialiased min-h-screen flex flex-col items-center justify-center relative overflow-hidden font-body-md text-body-md">
+    <!-- Ambient Background Glows -->
+    <div class="absolute inset-0 z-0 pointer-events-none">
+        <div class="absolute -top-[20%] -left-[20%] w-[140%] h-[140%] bg-glow-radial blur-[80px]"></div>
+        <div class="absolute bottom-0 left-0 w-full h-[50%] bg-gradient-to-t from-deep-charcoal to-transparent z-10">
+        </div>
+    </div>
+    <!-- Main Content Container -->
+    <main
+        class="relative z-20 w-full max-w-md px-margin-mobile flex flex-col items-center text-center h-full min-h-screen justify-between py-12">
+        <!-- Top Section: Brand Pill -->
+        <div class="w-full flex justify-center mt-8">
+            <div class="glass-panel rounded-full px-6 py-2 inline-flex items-center gap-2">
+                <span class="text-primary font-label-sm text-label-sm uppercase tracking-wider">✨ Aura AI
+                    Workspace</span>
+            </div>
+        </div>
+        <!-- Middle Section: 3D Orb & Typography -->
+        <div class="w-full flex flex-col items-center justify-center flex-grow gap-stack-md my-stack-lg">
+            <!-- Frosted 3D Glass Orb Visualization (Placeholder) -->
+            <div class="relative w-48 h-48 mb-8 flex items-center justify-center">
+                <!-- Ambient glow behind orb -->
+                <div class="absolute inset-0 bg-primary/20 blur-3xl rounded-full"></div>
+                <div
+                    class="w-full h-full rounded-full glass-panel flex items-center justify-center relative overflow-hidden shadow-[0_0_40px_rgba(192,108,132,0.15)]">
+                    <span class="material-symbols-outlined text-6xl text-primary opacity-80"
+                        style="font-variation-settings: 'FILL' 1;">
+                        auto_awesome
+                    </span>
+                    <!-- Highlight to simulate glass reflection -->
+                    <div class="absolute top-0 left-1/4 w-1/2 h-1/4 bg-white/10 rounded-full blur-md"></div>
+                </div>
+            </div>
+            <!-- Headline -->
+            <h1 class="font-headline-lg-mobile text-headline-lg-mobile text-on-surface max-w-[300px]">
+                Your aesthetic <br />
+                <span class="font-headline-lg-mobile text-headline-lg-mobile italic text-primary">intelligent</span>
+                <br />
+                companion
+            </h1>
+            <!-- Subtitle -->
+            <p class="font-body-md text-body-md text-on-surface-variant max-w-[280px]">
+                Experience seamless, gentle, and highly responsive AI assistance crafted for elegance and everyday
+                productivity.
+            </p>
+        </div>
+        <!-- Bottom Section: CTA -->
+        <div class="w-full pb-8">
+            <button
+                class="w-full py-4 rounded-full bg-gradient-to-r from-[#C06C84] to-[#D49B9B] text-off-white font-label-md text-label-md flex items-center justify-center gap-2 shadow-[0_0_30px_rgba(192,108,132,0.25)] hover:shadow-[0_0_40px_rgba(192,108,132,0.4)] transition-all duration-300" ><a href="auth.html">
+                Get Started
+                <span class="material-symbols-outlined text-xl">arrow_forward</span>
+            </a></button>
+        </div>
+    </main>
+</body>
+
+</html>
